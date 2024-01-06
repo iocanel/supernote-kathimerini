@@ -21,6 +21,11 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
+      - name: Install wkhtmltopdf
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
+          wkhtmltopdf --version # To verify the installation
       - name: Install dependencies
         run: poetry install
       - name: Build
@@ -29,5 +34,5 @@ jobs:
         run: |
           echo "${{ secrets.TOKEN_JSON }}" > token.json
           echo "${{ secrets.CREDENTIALS_JSON }}" > credentials.json
-      - name: Build
+      - name: Run
         run: poetry run python -m supernote_kathimerini
