@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "supernote-kathimerini"
+version = "0.1.0"
+description = ""
+authors = ["Ioannis Canellos <iocanel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests-html = "^0.10.0"
+pyppeteer = "^1.0.2"
+pdfkit = "^1.0.0"
+pypdf2 = "^3.0.1"
+google-auth = "^2.23.3"
+google-auth-oauthlib = "^1.1.0"
+google-auth-httplib2 = "^0.1.1"
+google-api-python-client = "^2.105.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
