@@ -34,8 +34,5 @@ jobs:
         run: |
           echo -n "${{ secrets.TOKEN_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/token.json
           echo -n "${{ secrets.CREDENTIALS_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/credentials.json
-          echo -n "${{ secrets.TEST_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/test.json
-          ls -al
-          cat test.json
       - name: Run
         run: poetry run python -m supernote_kathimerini
