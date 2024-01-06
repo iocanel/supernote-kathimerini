@@ -32,9 +32,9 @@ jobs:
         run: poetry build
       - name: Create token and credentials
         run: |
-          echo "${{ secrets.TOKEN_JSON }}" > /home/runner/work/supernote-kathimerini/supernote-kathimerini/token.json
-          echo "${{ secrets.CREDENTIALS_JSON }}" > /home/runner/work/supernote-kathimerini/supernote-kathimerini/credentials.json
-          echo "${{ secrets.TEST_JSON }}" > /home/runner/work/supernote-kathimerini/supernote-kathimerini/test.json
+          echo -n "${{ secrets.TOKEN_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/token.json
+          echo -n "${{ secrets.CREDENTIALS_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/credentials.json
+          echo -n "${{ secrets.TEST_JSON }}" | base64 -d > /home/runner/work/supernote-kathimerini/supernote-kathimerini/test.json
           ls -al
           cat test.json
       - name: Run
