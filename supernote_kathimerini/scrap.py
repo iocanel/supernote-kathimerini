@@ -56,7 +56,7 @@ def scrap():
       merger.append(pdf)
   
   today = datetime.datetime.now().strftime('%Y-%m-%d')
-  file_name = f'{today}-news.pdf'
+  file_name = f'news.pdf'
   merger.write(file_name)
   merger.close()
   

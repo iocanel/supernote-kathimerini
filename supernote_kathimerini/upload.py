@@ -31,7 +31,7 @@ def upload():
     today = datetime.datetime.now().strftime('%Y-%m-%d')
 
     # Form the file name
-    file_name = f'{today}-news.pdf'
+    file_name = f'news.pdf'
 
     # File metadata
     file_metadata = {
